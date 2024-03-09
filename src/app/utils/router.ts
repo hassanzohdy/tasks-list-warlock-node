@@ -1,30 +1,31 @@
 import {
   authMiddleware,
-  requestContext,
   router,
   type Middleware,
+  type Request,
+  type Response,
   type RouterGroupCallback,
 } from "@mongez/warlock";
+import { User } from "app/users/models/user";
 
-export const adminPath = (path: string) => `/admin${path}`;
+export async function adminUser(request: Request<User>, response: Response) {
+  const user = request.user;
 
-/**
- * Check if the current request is for admin
- */
-export const isAdminRequest = () => {
-  const { request } = requestContext();
+  if (!user.bool("isAdmin")) {
+    return response.forbidden({
+      error: "You are not authorized to access this route.",
+    });
+  }
+}
 
-  return request.path.includes("/admin");
-};
-
-/**
- * Add routes Group
- */
-const adminRoutes = (callback: RouterGroupCallback) => {
+export const guardedAdmin = (
+  callback: RouterGroupCallback,
+  moreMiddlewares: Middleware[] = [],
+) => {
   return router.group(
     {
-      prefix: "/admin",
-      name: "admin",
+      name: "guarded.admin",
+      middleware: [authMiddleware("user"), adminUser, ...moreMiddlewares],
     },
     callback,
   );
@@ -41,63 +42,6 @@ export const guarded = (
     {
       name: "guarded.user",
       middleware: [authMiddleware("user"), ...moreMiddlewares],
-    },
-    callback,
-  );
-};
-
-/**
- * Only guests can access these routes.
- */
-export const guardedGuest = (callback: RouterGroupCallback) => {
-  return router.group(
-    {
-      name: "guarded.guest",
-      middleware: [authMiddleware("guest")],
-    },
-    callback,
-  );
-};
-
-/**
- * Guarded guest routes for admin
- */
-export const guardedGuestAdmin = (callback: RouterGroupCallback) => {
-  return adminRoutes(() => {
-    router.group(
-      {
-        name: "guarded.guest",
-        middleware: [authMiddleware("guest")],
-      },
-      callback,
-    );
-  });
-};
-
-/**
- * Only admin can access these routes.
- */
-export const guardedAdmin = (callback: RouterGroupCallback) => {
-  return adminRoutes(() => {
-    router.group(
-      {
-        name: "guarded.user",
-        middleware: [authMiddleware("user")],
-      },
-      callback,
-    );
-  });
-};
-
-/**
- * Public routes that doesn't require user to be logged in to access them.
- * Just requires an access token.
- */
-export const publicRoutes = (callback: RouterGroupCallback) => {
-  return router.group(
-    {
-      name: "public",
-      middleware: [authMiddleware()],
     },
     callback,
   );

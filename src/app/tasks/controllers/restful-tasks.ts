@@ -1,6 +1,6 @@
 import { ExistsRule, Restful, RouteResource } from "@mongez/warlock";
 import { User } from "app/users/models/user";
-import { TaskStatus } from "../utils/flags";
+import { tasksStatusList } from "../utils/flags";
 import { Task } from "./../models/task";
 import tasksRepository from "./../repositories/tasks-repository";
 
@@ -11,6 +11,13 @@ class RestfulTasks extends Restful<Task> implements RouteResource {
   protected repository = tasksRepository;
 
   /**
+   * Get exists user rule
+   */
+  protected existUser(isAdmin: boolean) {
+    return new ExistsRule(User).query(query => query.where("isAdmin", isAdmin));
+  }
+
+  /**
    * {@inheritDoc}
    */
   public validation: RouteResource["validation"] = {
@@ -18,15 +25,9 @@ class RestfulTasks extends Restful<Task> implements RouteResource {
       rules: {
         title: ["required", "string"],
         description: ["required", "string"],
-        status: ["required", "in:" + Object.values(TaskStatus).join(",")],
-        assignedTo: [
-          "required",
-          new ExistsRule(User).query(query => query.where("isAdmin", false)),
-        ],
-        admin: [
-          "required",
-          new ExistsRule(User).query(query => query.where("isAdmin", true)),
-        ],
+        status: ["required", "in:" + tasksStatusList.join(",")],
+        assignedTo: ["required", this.existUser(false)],
+        admin: ["required", this.existUser(false)],
       },
     },
   };

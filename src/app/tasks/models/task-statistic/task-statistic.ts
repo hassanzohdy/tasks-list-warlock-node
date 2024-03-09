@@ -32,7 +32,7 @@ export class TaskStatistic extends Model {
    * Cast data types before saving documents into database
    */
   protected casts: Casts = {
-    assignedTo: User,
+    user: User,
     totalTasks: "int",
     totalOpenTasks: "int",
     totalClosedTasks: "int",

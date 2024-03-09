@@ -27,7 +27,9 @@ export class Task extends Model {
    * Default value for model data
    * Works only when creating new records
    */
-  public defaultValue: Document = {};
+  public defaultValue: Document = {
+    status: TaskStatus.Open,
+  };
 
   /**
    * Cast data types before saving documents into database

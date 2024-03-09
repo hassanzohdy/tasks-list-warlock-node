@@ -1,5 +1,7 @@
 import { castEmail, Casts, Document } from "@mongez/monpulse";
 import { Auth, castPassword } from "@mongez/warlock";
+import { Task } from "app/tasks/models/task";
+import { TaskStatistic } from "app/tasks/models/task-statistic";
 import UserOutput from "../../output/user-output";
 
 export class User extends Auth {
@@ -16,7 +18,11 @@ export class User extends Auth {
   /**
    * {@inheritdoc}
    */
-  public syncWith = [];
+  public syncWith = [
+    Task.sync("assignedTo"),
+    Task.sync("admin"),
+    TaskStatistic.sync("user"),
+  ];
 
   /**
    * Get user type
@@ -29,7 +35,7 @@ export class User extends Auth {
    * {@inheritDoc}
    */
   public defaultValue: Document = {
-    isActive: false,
+    isAdmin: false,
   };
 
   /**

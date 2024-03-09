@@ -28,20 +28,18 @@ export async function setAssignedTaskStatistics(userId: number) {
 
   if (!user) return;
 
-  const taskStatistics =
-    (await TaskStatistic.first({
-      "assignedTo.id": userId,
-    })) || new TaskStatistic();
-
-  console.log({
-    user: user.onlyId,
-    totalTasks,
-    totalOpenTasks,
-    totalClosedTasks,
-  });
+  const taskStatistics = await TaskStatistic.findOrCreate(
+    { "user.id": userId },
+    {
+      user,
+      totalTasks,
+      totalOpenTasks,
+      totalClosedTasks,
+    },
+  );
 
   taskStatistics.save({
-    assignedTo: user,
+    user,
     totalTasks,
     totalOpenTasks,
     totalClosedTasks,

@@ -9,10 +9,6 @@ export default async function login(
 
   const auth = await user.generateAccessToken();
 
-  user.save({
-    lastLogin: new Date(),
-  });
-
   return response.success({
     user: {
       ...(await user.toJSON()),
@@ -33,14 +29,6 @@ login.validation = {
     if (!user) {
       return response.badRequest({
         error: t("auth.invalidCredentials"),
-      });
-    }
-
-    if (!user.isActive) {
-      // you can send the activation code again
-      // or just return a bad request with an error message
-      return response.forbidden({
-        error: t("auth.accountNotActivated"),
       });
     }
 

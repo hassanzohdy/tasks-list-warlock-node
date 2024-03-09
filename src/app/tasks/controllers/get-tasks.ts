@@ -1,6 +1,6 @@
 import {
-  type RequestHandler,
   type Request,
+  type RequestHandler,
   type Response,
 } from "@mongez/warlock";
 import tasksRepository from "../repositories/tasks-repository";
@@ -19,6 +19,6 @@ const getTasks: RequestHandler = async (
   });
 };
 
-getTasks.description = "Get Tasks";
+getTasks.description = "Get Tasks List";
 
 export default getTasks;

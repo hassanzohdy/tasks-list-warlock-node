@@ -1,2 +1,2 @@
-export * from "./setup";
+export * from "./migration";
 export * from "./user";

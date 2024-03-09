@@ -1,6 +1,6 @@
 import {
-  type RequestHandler,
   type Request,
+  type RequestHandler,
   type Response,
 } from "@mongez/warlock";
 import tasksRepository from "../repositories/tasks-repository";
