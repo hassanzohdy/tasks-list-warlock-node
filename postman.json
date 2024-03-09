@@ -1,0 +1,872 @@
+{
+  "info": {
+    "name": "tasks-node",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Get Homes list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{userAccessTokenHeader}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/admin/home",
+              "host": ["{{baseUrl}}/admin/home"]
+            }
+          }
+        },
+        {
+          "name": "Tasks",
+          "item": [
+            {
+              "name": "Get Tasks list",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/tasks",
+                  "host": ["{{baseUrl}}/admin/tasks"]
+                }
+              }
+            },
+            {
+              "name": "Get Task",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/tasks/:id",
+                  "host": ["{{baseUrl}}/admin/tasks/:id"]
+                }
+              }
+            },
+            {
+              "name": "Create New Admin Task",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/tasks",
+                  "host": ["{{baseUrl}}/admin/tasks"]
+                },
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n  \"title\": \"text: Required | String\",\n  \"description\": \"text: Required | String\",\n  \"status\": \"text: Required | One Of: open, closed\",\n  \"assignedTo\": \"number: Required | Valid assignedTo id\",\n  \"admin\": \"number: Required | Valid admin id\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Update Admin Task",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/tasks/:id",
+                  "host": ["{{baseUrl}}/admin/tasks/:id"]
+                },
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n  \"title\": \"text: Required | String\",\n  \"description\": \"text: Required | String\",\n  \"status\": \"text: Required | One Of: open, closed\",\n  \"assignedTo\": \"number: Required | Valid assignedTo id\",\n  \"admin\": \"number: Required | Valid admin id\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Patch Admin Task",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/tasks/:id",
+                  "host": ["{{baseUrl}}/admin/tasks/:id"]
+                }
+              }
+            },
+            {
+              "name": "Delete Admin Task",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/tasks/:id",
+                  "host": ["{{baseUrl}}/admin/tasks/:id"]
+                }
+              }
+            },
+            {
+              "name": "Delete Admin Tasks list",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/tasks",
+                  "host": ["{{baseUrl}}/admin/tasks"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create New Admin Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{guestAccessTokenHeader}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/admin/login",
+              "host": ["{{baseUrl}}/admin/login"]
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n  \"password\": \"text: Required\",\n  \"email\": \"text: Required | Email\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Create New Admin Forget Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{guestAccessTokenHeader}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/admin/forget-password",
+              "host": ["{{baseUrl}}/admin/forget-password"]
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n  \"email\": \"text: Required | Email | Unique Email\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Create New Admin Reset Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{guestAccessTokenHeader}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/admin/reset-password",
+              "host": ["{{baseUrl}}/admin/reset-password"]
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n  \"email\": \"text: Required | Email | Valid email email\",\n  \"password\": \"text: Required | Confirmed | Min Length: 8\",\n  \"code\": \"number: Required | Int | Length\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Users",
+          "item": [
+            {
+              "name": "Get Users list",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/users",
+                  "host": ["{{baseUrl}}/admin/users"]
+                }
+              }
+            },
+            {
+              "name": "Get User",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/users/:id",
+                  "host": ["{{baseUrl}}/admin/users/:id"]
+                }
+              }
+            },
+            {
+              "name": "Create New Admin User",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/users",
+                  "host": ["{{baseUrl}}/admin/users"]
+                },
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n  \"name\": \"text: Required | Min: 2\",\n  \"email\": \"text: Required | Email | Unique Email\",\n  \"phoneNumber\": \"text: Required | Unique PhoneNumber\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Update Admin User",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/users/:id",
+                  "host": ["{{baseUrl}}/admin/users/:id"]
+                }
+              }
+            },
+            {
+              "name": "Patch Admin User",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/users/:id",
+                  "host": ["{{baseUrl}}/admin/users/:id"]
+                }
+              }
+            },
+            {
+              "name": "Delete Admin User",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/users/:id",
+                  "host": ["{{baseUrl}}/admin/users/:id"]
+                }
+              }
+            },
+            {
+              "name": "Delete Admin Users list",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{userAccessTokenHeader}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/admin/users",
+                  "host": ["{{baseUrl}}/admin/users"]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Get Homes list",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/home",
+          "host": ["{{baseUrl}}/home"]
+        }
+      }
+    },
+    {
+      "name": "Get Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/tasks",
+          "host": ["{{baseUrl}}/tasks"]
+        }
+      }
+    },
+    {
+      "name": "Get Task",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/tasks/:id",
+          "host": ["{{baseUrl}}/tasks/:id"]
+        }
+      }
+    },
+    {
+      "name": "Create New Upload",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/uploads",
+          "host": ["{{baseUrl}}/uploads"]
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "uploads",
+              "type": "file",
+              "description": "Required | Array | File"
+            },
+            {
+              "key": "directory",
+              "type": "text",
+              "description": "String"
+            },
+            {
+              "key": "random",
+              "type": "text",
+              "description": "Boolean"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create New Admin Upload",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/admin/uploads",
+          "host": ["{{baseUrl}}/admin/uploads"]
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "uploads",
+              "type": "file",
+              "description": "Required | Array | File"
+            },
+            {
+              "key": "directory",
+              "type": "text",
+              "description": "String"
+            },
+            {
+              "key": "random",
+              "type": "text",
+              "description": "Boolean"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create New Uploads Chunk",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/uploads/chunks",
+          "host": ["{{baseUrl}}/uploads/chunks"]
+        }
+      }
+    },
+    {
+      "name": "Create New Admin Uploads Chunk",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/admin/uploads/chunks",
+          "host": ["{{baseUrl}}/admin/uploads/chunks"]
+        }
+      }
+    },
+    {
+      "name": "Delete Uploads :hash",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/uploads/:hash",
+          "host": ["{{baseUrl}}/uploads/:hash"]
+        }
+      }
+    },
+    {
+      "name": "Delete Admin Uploads :hash",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/admin/uploads/:hash",
+          "host": ["{{baseUrl}}/admin/uploads/:hash"]
+        }
+      }
+    },
+    {
+      "name": "Get *s list",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/uploads/*",
+          "host": ["{{baseUrl}}/uploads/*"]
+        }
+      }
+    },
+    {
+      "name": "Get Upload",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/uploads/:hash",
+          "host": ["{{baseUrl}}/uploads/:hash"]
+        }
+      }
+    },
+    {
+      "name": "Create New Admin Login Guest",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/admin/login/guests",
+          "host": ["{{baseUrl}}/admin/login/guests"]
+        }
+      }
+    },
+    {
+      "name": "Create New Login Guest",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/login/guests",
+          "host": ["{{baseUrl}}/login/guests"]
+        }
+      }
+    },
+    {
+      "name": "Create New Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{guestAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/login",
+          "host": ["{{baseUrl}}/login"]
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"email\": \"text: Required | Email\",\n  \"password\": \"text: Required | String\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create New Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{guestAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/register",
+          "host": ["{{baseUrl}}/register"]
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"name\": \"text: Required | Min Length: 2\",\n  \"email\": \"text: Required | Email | Unique Email\",\n  \"password\": \"text: Required | Min Length: 8\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create New Register Verify",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{guestAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/register/verify",
+          "host": ["{{baseUrl}}/register/verify"]
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"code\": \"text: Required\",\n  \"email\": \"text: Required | Email\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create New Resend Activation Code",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{guestAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/resend-activation-code",
+          "host": ["{{baseUrl}}/resend-activation-code"]
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"email\": \"text: Required | Email | Valid email email\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create New Forget Password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{guestAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/forget-password",
+          "host": ["{{baseUrl}}/forget-password"]
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"email\": \"text: Required | Email | Unique Email\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create New Forget Password Verify Code",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{guestAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/forget-password/verify-code",
+          "host": ["{{baseUrl}}/forget-password/verify-code"]
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"email\": \"text: Required | Email | Unique Email\",\n  \"code\": \"number: Required | Int | Length\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create New Reset Password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{guestAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/reset-password",
+          "host": ["{{baseUrl}}/reset-password"]
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"email\": \"text: Required | Email | Valid email email\",\n  \"password\": \"text: Required | Confirmed | Min Length: 8\",\n  \"code\": \"number: Required | Int | Length\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Us list",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/me",
+          "host": ["{{baseUrl}}/me"]
+        }
+      }
+    },
+    {
+      "name": "Create New Me",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/me",
+          "host": ["{{baseUrl}}/me"]
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"name\": \"text: Required | Min Length: 2\",\n  \"gender\": \"text: One Of: male, female\",\n  \"phoneNumber\": \"text: Required | Unique PhoneNumber\",\n  \"email\": \"text: Required | Email | Unique Email\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create New Logout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/logout",
+          "host": ["{{baseUrl}}/logout"]
+        }
+      }
+    },
+    {
+      "name": "Create New Change Password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{userAccessTokenHeader}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/change-password",
+          "host": ["{{baseUrl}}/change-password"]
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"currentPassword\": \"text: Required\",\n  \"password\": \"text: Required | Min Length: 8 | Confirmed\"\n}"
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "baseUrl",
+      "key": "baseUrl",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "userAccessToken",
+      "value": "YOUR_TOKEN_HERE"
+    },
+    {
+      "key": "userAccessTokenHeader",
+      "value": "Bearer {{userAccessToken}}"
+    },
+    {
+      "key": "guestAccessToken",
+      "value": "YOUR_TOKEN_HERE"
+    },
+    {
+      "key": "guestAccessTokenHeader",
+      "value": "Bearer {{guestAccessToken}}"
+    }
+  ]
+}
