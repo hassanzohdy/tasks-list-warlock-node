@@ -25,22 +25,22 @@
     "@mongez/collection": "^1.1.2",
     "@mongez/encryption": "^1.0.4",
     "@mongez/fs": "^3.0.4",
-    "@mongez/monpulse": "^1.0.41",
+    "@mongez/monpulse": "^1.0.42",
     "@mongez/reinforcements": "^2.3.9",
     "@mongez/scheduler": "^1.0.0",
     "@mongez/sitemap": "^1.0.2",
     "@mongez/time-wizard": "^1.0.6",
-    "@mongez/warlock": "^2.0.5",
+    "@mongez/warlock": "^2.0.7",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.4",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
-    "@typescript-eslint/eslint-plugin": "^7.1.0",
-    "@typescript-eslint/parser": "^7.1.0",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
@@ -48,6 +48,6 @@
     "npm-check-updates": "^16.14.15",
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   }
 }

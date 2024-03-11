@@ -1241,10 +1241,10 @@
     chalk "^4"
     dayjs "^1.11.9"
 
-"@mongez/monpulse@^1.0.41":
-  version "1.0.41"
-  resolved "https://registry.yarnpkg.com/@mongez/monpulse/-/monpulse-1.0.41.tgz#d6eefa622f9886736df4890e2586567cd24a123f"
-  integrity sha512-G+Pdzob/6vxun1yw0BleH4RvejH1PgtsPG62CodDYm6c6JZlx2z11QCV8TrtdRfyfjHB3+xK2C6xWAz6J2p+QA==
+"@mongez/monpulse@^1.0.42":
+  version "1.0.42"
+  resolved "https://registry.yarnpkg.com/@mongez/monpulse/-/monpulse-1.0.42.tgz#f8f0fa0487bdca447ea078bdff80a2eaddec8f05"
+  integrity sha512-GWIdGWka96lDpPHba81NOv+36YSYkqP8rfbsAXrBRrb79F/67G9zUzONkn1eLsQ33Ooo21cgyYA2Jm7gMeR7Zg==
   dependencies:
     "@mongez/copper" "^1.0.1"
     "@mongez/events" "^2.1.0"
@@ -1302,12 +1302,13 @@
     "@mongez/config" "^1.0.26"
     dayjs "^1.11.7"
 
-"@mongez/warlock@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@mongez/warlock/-/warlock-2.0.5.tgz#f384df5ff973da03e72bab07cae23dbb45ef2a44"
-  integrity sha512-cQ51SnqN3EqjGuUSkxFKUimtpL/O0kiYAPgNHYcdrQ+V+GQ40zOGstCVz7Nz0/9HGzzBD/7Uw7UanVQMzCr6kA==
+"@mongez/warlock@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@mongez/warlock/-/warlock-2.0.7.tgz#295653246857c5fad9b9b62620e298555a122a13"
+  integrity sha512-Gnh4HA7w9Zw60eRsUm8WAlm8bGfB8Tp29XH/MXktb/kC518zejGluf/jK8EthiGoT0ZRx9G1Son2K65cM1yN9w==
   dependencies:
     "@aws-sdk/client-s3" "^3.451.0"
+    "@faker-js/faker" "^8.4.1"
     "@fastify/cors" "^8.4.1"
     "@fastify/multipart" "^8.0.0"
     "@fastify/rate-limit" "^9.0.0"
@@ -1322,7 +1323,7 @@
     "@mongez/http" "^2.2.6"
     "@mongez/localization" "^2.2.4"
     "@mongez/logger" "^1.0.10"
-    "@mongez/monpulse" "^1.0.41"
+    "@mongez/monpulse" "^1.0.42"
     "@mongez/password" "^1.0.2"
     "@mongez/reinforcements" "^2.3.9"
     "@mongez/slug" "^1.0.7"
@@ -2521,14 +2522,14 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.11.tgz#2596fb352ee96a1379c657734d4b913a613ad563"
   integrity sha512-ga8y9v9uyeiLdpKddhxYQkxNDrfvuPrlFb0N1qnZZByvcElJaXthF1UhvCh9TLWJBEHeNtdnbysW7Y6Uq8CVng==
 
-"@types/react-dom@^18.2.19":
+"@types/react-dom@^18.2.21":
   version "18.2.21"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.21.tgz#b8c81715cebdebb2994378616a8d54ace54f043a"
   integrity sha512-gnvBA/21SA4xxqNXEwNiVcP0xSGHh/gi1VhWv9Bl46a0ItbTT5nFY+G9VSQpaG/8N/qdJpJ+vftQ4zflTtnjLw==
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^18.2.61":
+"@types/react@*", "@types/react@^18.2.64":
   version "18.2.64"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.64.tgz#3700fbb6b2fa60a6868ec1323ae4cbd446a2197d"
   integrity sha512-MlmPvHgjj2p3vZaxbQgFUQFvD8QiZwACfGqEdDSWou5yISWxDQ4/74nCAwsUiX7UFLKZz3BbVSPj+YxeoGGCfg==
@@ -2560,7 +2561,7 @@
     "@types/node" "*"
     "@types/webidl-conversions" "*"
 
-"@typescript-eslint/eslint-plugin@^7.1.0":
+"@typescript-eslint/eslint-plugin@^7.1.1":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-7.1.1.tgz#dd71fc5c7ecec745ca26ece506d84d203a205c0e"
   integrity sha512-zioDz623d0RHNhvx0eesUmGfIjzrk18nSBC8xewepKXbBvN/7c1qImV7Hg8TI1URTxKax7/zxfxj3Uph8Chcuw==
@@ -2577,7 +2578,7 @@
     semver "^7.5.4"
     ts-api-utils "^1.0.1"
 
-"@typescript-eslint/parser@^7.1.0":
+"@typescript-eslint/parser@^7.1.1":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-7.1.1.tgz#6a9d0a5c9ccdf5dbd3cb8c949728c64e24e07d1f"
   integrity sha512-ZWUFyL0z04R1nAEgr9e79YtV5LbafdOtN7yapNbn1ansMyaegl2D4bL7vHoJ4HPSc4CaLwuCVas8CVuneKzplQ==
@@ -7213,7 +7214,7 @@ typescript@5.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.3.3.tgz#b3ce6ba258e72e6305ba66f5c9b452aaee3ffe37"
   integrity sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==
 
-typescript@^5.3.3:
+typescript@^5.4.2:
   version "5.4.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.2.tgz#0ae9cebcfae970718474fe0da2c090cad6577372"
   integrity sha512-+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==
