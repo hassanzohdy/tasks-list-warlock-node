@@ -1302,10 +1302,10 @@
     "@mongez/config" "^1.0.26"
     dayjs "^1.11.7"
 
-"@mongez/warlock@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@mongez/warlock/-/warlock-2.0.7.tgz#295653246857c5fad9b9b62620e298555a122a13"
-  integrity sha512-Gnh4HA7w9Zw60eRsUm8WAlm8bGfB8Tp29XH/MXktb/kC518zejGluf/jK8EthiGoT0ZRx9G1Son2K65cM1yN9w==
+"@mongez/warlock@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@mongez/warlock/-/warlock-2.0.8.tgz#5678d075ba1859aaf132b2f579e615da5d8180b3"
+  integrity sha512-q5BcP5rd3TToJP0AyPSdKt7LNKHKZdv5gDCQce3ibS1U2fWLt7QHNN4lmS7G+uULGB9qjbgqBxvcz9zRMDnb9A==
   dependencies:
     "@aws-sdk/client-s3" "^3.451.0"
     "@faker-js/faker" "^8.4.1"
